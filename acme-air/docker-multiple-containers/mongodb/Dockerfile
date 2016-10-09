@@ -1,6 +1,6 @@
 # In production this should probably be busybox, but let's use ubuntu for a
 # fair comparison 
-FROM tutum/ubuntu-saucy
+FROM ubuntu:trusty
 
 MAINTAINER Wes Felter, wmf@us.ibm.com
 
@@ -9,7 +9,7 @@ MAINTAINER Wes Felter, wmf@us.ibm.com
 #    deb http://archive.ubuntu.com/ubuntu saucy-updates main universe
 #    deb http://archive.ubuntu.com/ubuntu saucy-security main universe
 # Restricted to reduce update time
-RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 # Now, make sure the package repository is up to date
 RUN apt-get update
 

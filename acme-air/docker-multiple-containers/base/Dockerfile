@@ -2,7 +2,7 @@
 # fair comparison 
 #
 # Source: https://index.docker.io/u/tutum/ubuntu-saucy/
-FROM tutum/ubuntu-saucy
+FROM ubuntu:trusty
 
 MAINTAINER Juan Rubio, rubioj@us.ibm.com
 
@@ -11,7 +11,7 @@ MAINTAINER Juan Rubio, rubioj@us.ibm.com
 #    deb http://archive.ubuntu.com/ubuntu saucy-updates main universe
 #    deb http://archive.ubuntu.com/ubuntu saucy-security main universe
 # We want to be lean, and reduce build time, so remove most repositories
-RUN sh -c 'cp -p /etc/apt/sources.list /etc/apt/sources.list.orig; echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list'
+RUN sh -c 'cp -p /etc/apt/sources.list /etc/apt/sources.list.orig; echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list'
 # Now, make sure the package repository is up to date
 RUN apt-get update
 
